@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+    var identificadorDeTemporizador;
+    function ColdorfDecision1(){
+    clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('situacion sanitaria').innerText;
+        alert(economia);
+        situacion sanitaria=situacion sanitaria+20;
+        economia=economia-30;
+        situacion sanitaria=document.getElementById('situacion sanitaria').innerHTML=situacion sanitaria;
+        economia=document.getElementById('situacion sanitaria').innerHTML= economia;
+
+    }
+    function ColdorfDecision2(){
+    clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('situacion sanitaria').innerText;
+        alert(economia);
+        situacion sanitaria=situacion sanitaria-20;
+        situacion sanitaria=document.getElementById('situacion sanitaria').innerHTML=situacion sanitaria;
+    }
+    function ColdorfDecision3(){
+    	clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('situacion sanitaria').innerText;
+        alert(economia);
+        economia=Math.floor(economia);
+        situacion sanitaria=situacion sanitaria+10;
+        libertad politica=libertad politica-20
+        economia=economia-20
+        situacion sanitaria=document.getElementById('situacion sanitaria').innerHTML=situacion sanitaria;
+        libertad politica=document.getElementById('situacion sanitaria').innerHTML= libertad politica;
+        economia=document.getElementById('situacion sanitaria').innerHTML=economia;
+    }
+
+    
+    function pedirCartaEvento() {
+      	document.getElementById("comienzaJuego").innerHTML = "";
+		var x = document.getElementById("miCartaEvento");
+      	x.style.display = "inline";
+     	identificadorDeTemporizador = setTimeout(ColdorfDecision2, 3000);
+
+      
+	}
+    function funcionConRetraso() {
+      alert("Three seconds have elapsed.");
+    }
+    
+    
+    
+
+    
+    </script>
+    
+</head>
+<body>
+<div class="card-deck">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Mexico</div>
+  </div>
+
+  <div class="card-body">
+    <ul class="list-group">
+      <li class="list-group-item">Economía <div id='economia'>80</div></li>
+      <li class="list-group-item">Educación: </li> <div id='educacion'>63</div></li>
+      <li class="list-group-item">Situación Sanitaria: </li> <div id='situacion sanitaria'>40</div></li>
+      <li class="list-group-item">Libertades Políticas: </li> <div id='libertades politicas'>35</div></li>
+      
+    </ul>
+  </div>
+  <div class='card-footer'>
+
+  
+</div>
+
+   <button type="button" class="btn btn-primary" id='comienzaJuego' onclick="pedirCartaEvento()">
+              pedir carta de evento</button
+            ><!--la carta de evento también es azarosa-->
+
+</div>
+<div id='miCartaEvento' style="display: none;">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Educación</div>
+  </div>
+
+  <div class="card-body">
+   compra de vacunas para parar la pandemia 
+      
+    </ul>
+  </div>
+  <button
+    type="button"
+    class="btn btn-success"
+   onclick='ColdorfDecision1()'
+  >
+    se compraran vacunas y se fomentara la vacunacion optativa
+  </button>
+  <br>
+  <button
+    type="button"
+    class="btn btn-primary"
+   onclick='ColdorfDecision2()'
+  >
+  no se compraran vacunas a causa de pocos recursos economicos
+</button>
+<br>
+  <button
+    type="button"
+    class="btn btn-danger"
+   onclick='ColdorfDecision3()'
+  >
+   se obligara a que todos esten vacunados 
+  </button>
+  
+</div>
+</div>
+
+
+</div>
+
+
+
+
+</body>
+</html>

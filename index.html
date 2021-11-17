@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta charset="utf-8" />
+    <title>Mundo en pandemia</title>
+    <script src="mapdata.js"></script>
+    <script src="worldmap.js"></script>
+    <script src="scripts.js"></script>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+            .card-deck {
+              float: right;
+            }
+            * {
+              box-sizing: border-box;
+            }
+
+            /* Create two unequal columns that floats next to each other */
+            .column {
+              float: left;
+              padding: 10px;
+              height: 1000px; /* Should be removed. Only for demonstration */
+            }
+
+            .left {
+              width: 45%;
+            }
+
+            .right {
+              width: 55%;
+            }
+
+            /* Clear floats after the columns */
+            .row:after {
+              content: "";
+              display: table;
+              clear: both;
+
+            }
+            .modal-backdrop{
+            display: none;
+            }
+            .modal-content{
+              z-index=1100;
+            }
+            #animate {
+              width: 13%;
+              height: 30%;
+              position: absolute;
+              background:url('nuncamas.jpeg');
+              background-size:cover;
+
+      }
+      evento.inline { float:left; }
+      cartaPais1.inline { float:left; }
+    </style>
+  </head>
+  <body>
+    <div class="column left" id="izquierda" style="background-color: #aaa;">
+      <h2 class="bg-danger text-white">Pandemia Siglo XXI</h2>
+      <h3>Tercer año</h3>
+      <h4 class="bg-success text-white">
+        Instituto Bilingüe Dante Alighieri
+      </h4>
+      <div class="btn-group-vertical">
+        <div data-toggle="tooltip" title="reglas de juego">
+          <button
+            type="button"
+            class="btn btn-danger"
+            data-toggle="modal"
+            data-target="#explicacion"
+          >
+            como jugar
+          </button>
+        </div>
+        <div
+          data-toggle="tooltip"
+          title="ejemplo sobre como funcionan y herramientas con las que trabajamos"
+        >
+          <button
+            type="button"
+            class="btn btn-warning"
+            data-toggle="modal"
+            data-target="#explicacioneventos"
+          >
+            como funcionan las cartas de eventos
+          </button>
+        </div>
+        <div data-toggle="tooltip" title="reflexión sobre lo aprendido en 2021">
+          <button
+            type="button"
+            class="btn btn-primary"
+            data-toggle="modal"
+            data-target="#experiencia"
+          >
+            como fue la experiencia
+          </button>
+        </div>
+        <!--la carta de evento también es azarosa-->
+      </div>
+      <div style="max-width: 100%;">
+        <!-- Keep map above fold -->
+        <div id="map"></div>
+        --
+      </div>
+      <iframe
+        src="https://giphy.com/embed/dVuyBgq2z5gVBkFtDc"
+        width="350"
+        height="230"
+        frameborder="0"
+        class="giphy-embed"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="column right" id="derecha" style="background-color: #bbb;">
+      <button
+        type="button"
+        class="btn btn-primary"
+        onclick="muestraEventos()"
+        id="comienzaEventosYa"
+        style="display: none;"
+      >
+        comenzar a jugar
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        id="comienzaJuego"
+        onclick="muestrapais()"
+      >
+        sortea país
+      </button>
+      <div class="row">
+        <div class="col-sm-6">
+          <div id="cartaPais1" class="dice"></div>
+        </div>
+        <div class="col-sm-6">
+          <div id="evento"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+
+  <div class="modal fade" id="explicacion">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <iframe
+          src="https://drive.google.com/file/d/1jqHL-FYMLyIgDmN6zW6SG5Wdc2_gpC6T/preview"
+          width="640"
+          height="480"
+          allow="autoplay"
+        ></iframe>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="explicacioneventos">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <iframe
+          src="https://drive.google.com/file/d/1Jd3f32YXeBMB-nyumlCuUA6aak_L36uo/preview"
+          width="640"
+          height="480"
+          allow="autoplay"
+        ></iframe>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="experiencia">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <iframe
+          src="https://drive.google.com/file/d/1gaAH32eE_ChYtErXTwpLacvFr2XJGy2-/preview"
+          width="640"
+          height="480"
+          allow="autoplay"
+        ></iframe>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Cerrar
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</html>

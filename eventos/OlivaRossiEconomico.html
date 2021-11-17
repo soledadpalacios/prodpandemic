@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+    var identificadorDeTemporizador;
+    function olivarossiDecision1(){
+        clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('economia').innerText;
+      var educacion=document.getElementById('educacion').innerText;
+      var libertad=document.getElementById('libertad').innerText; 
+        economia=Math.floor(economia); 
+        economia=economia+20;
+        educacion=Math.floor(educacion);
+        educacion=educacion+10;
+        libertad=libertad-2;
+        economia=document.getElementById('economia').innerHTML=economia;
+        eduacacion=document.getElementById('educacion').innerHTML=educacion;
+        libertad=document.getElementById('libertad').innerHTML=libertad;
+    }
+    function olivarossiDecision2(){
+        clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('economia').innerText;
+        economia=economia-15;
+        economia=document.getElementById('economia').innerHTML=economia;
+    }
+    function olivarossiDecision3(){
+    	clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('economia').innerText;
+        economia=Math.floor(economia);
+        economia=economia+17;
+        economia=document.getElementById('economia').innerHTML=economia;
+    }
+    
+    function pedirCartaEvento() {
+      	document.getElementById("comienzaJuego").innerHTML = "";
+		var x = document.getElementById("miCartaEvento");
+      	x.style.display = "inline";
+     	identificadorDeTemporizador = setTimeout(olivarossiDecision2, 9000);
+
+      
+	}
+    function funcionConRetraso() {
+      alert("Nine seconds have elapsed.");
+    }
+    
+    
+    
+
+    
+    </script>
+    
+</head>
+<body>
+<div class="card-deck">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Bahrein</div>
+  </div>
+
+  <div class="card-body">
+    <ul class="list-group">
+      <li class="list-group-item">Economia: <div id='economia'>55</div></li>
+      <li class="list-group-item">Educacion: <div id='educacion'>78</div></li>
+      <li class="list-group-item">Situacion Sanitaria: <div id='situacionsanitaria'>67</div></li>
+      <li class="list-group-item">Libertad Politica: <div id='libertad'>69</div></li>
+      
+    </ul>
+  </div>
+  <div class='card-footer'>
+ 
+  
+</div>
+
+   <button type="button" class="btn btn-primary" id='comienzaJuego' onclick="pedirCartaEvento()">
+              pedir carta de evento</button
+            ><!--la carta de evento también es azarosa-->
+
+</div>
+<div id='miCartaEvento' style="display: none;">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Economia</div>
+  </div>
+
+  <div class="card-body">
+   Empresas de tecnologia del sector privado han establecido alianzas con la principal universidad de Bahrein para adiestrar a los jovenes en diversos campos con las expectativas de que puedan abrirse un cupo en el mercado lavoral. 
+    
+  </ul>
+  </div>
+  <button
+    type="button"
+    class="btn btn-success"
+   onclick='olivarossiDecision1()'
+  >
+   Formar a los jovenes  
+  </button>
+  <br>
+  <button
+    type="button"
+    class="btn btn-primary"
+   onclick='olivarossiDecision2()'
+  >
+  
+   No hacer nada  
+  </button>
+<br>
+  <button
+    type="button"
+    class="btn btn-danger"
+   onclick='olivarossiDecision3()'
+  >
+   Llamar jovenes extranjeros  
+  </button>
+  
+</div>
+</div>
+
+
+</div>
+
+
+
+
+</body>
+</html>

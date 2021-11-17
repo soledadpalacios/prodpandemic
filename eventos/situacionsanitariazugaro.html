@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+     var identificadorDeTemporizador;
+    function zugaroDecision1(){
+    clearTimeout(identificadorDeTemporizador);
+    	var situacionsanitaria=document.getElementById('situacion sanitaria').innerText;
+        alert(situacionsanitaria);
+       situacionsanitaria=situacionsanitaria+20;
+        situacionsanitaria=document.getElementById('situacion sanitaria').innerHTML=situacionsanitaria;
+    }
+    function zugaroDecision2(){
+    clearTimeout(identificadorDeTemporizador);
+    	var situacionsanitaria=document.getElementById('situacion sanitaria').innerText;
+        alert(situacionsanitaria);
+        situacionsanitaria=situacionsanitaria-10;
+       situacionsanitaria=document.getElementById('situacion sanitaria').innerHTML=situacionsanitaria;
+    }
+    function zugaroDecision3(){
+    clearTimeout(identificadorDeTemporizador);
+    	var situacionsanitaria=document.getElementById('situacion sanitaria').innerText;
+        alert(situacionsanitaria);
+       situacionsanitaria=Math.floor(situacionsanitaria);
+       situacionsanitaria=situacionsanitaria-20;
+        situacionsanitaria=document.getElementById('situacion sanitaria').innerHTML=situacionsanitaria;
+    }
+    
+    function pedirCartaEvento() {
+      	document.getElementById("comienzaJuego").innerHTML = "";
+		var x = document.getElementById("miCartaEvento");
+      	x.style.display = "inline";
+     	identificadorDeTemporizador = setTimeout(zugaroDecision3, 10000);
+
+      
+	}
+    function funcionConRetraso() {
+      alert("five seconds have elapsed.");
+    }
+    
+    
+    
+
+    
+    </script>
+    
+</head>
+<body>
+<div class="card-deck">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">China</div>
+  </div>
+
+  <div class="card-body">
+    <ul class="list-group">
+      <li class="list-group-item">situacion sanitaria: <div id='situacion sanitaria'>70</div></li>
+      <li class="list-group-item">economia: 80</li>
+      <li class="list-group-item">educacion: 80</li>
+      <li class="list-group-item">libertades politicas: 15</li>
+      
+    </ul>
+  </div>
+  <div class='card-footer'>
+ 
+  
+</div>
+
+   <button type="button" class="btn btn-danger" id='comienzaJuego' onclick="pedirCartaEvento()">
+              pedir carta de evento</button>
+              <!--la carta de evento también es azarosa-->
+
+</div>
+<div id='miCartaEvento' style="display: none;">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Aumentan los contagios</div>
+  </div>
+
+  </div>
+  <button
+    type="button"
+    class="btn btn-success"
+   onclick='zugaroDecision1()'
+  >
+   Obligar a la gente a utilizar barbijo
+  </button>
+  <br>
+  <button
+    type="button"
+    class="btn btn-primary"
+   onclick='zugaroDecision2()'
+  >
+  
+No dejar salir a nadie y traer al ejercito a las calles para controlarloso </button>
+<br>
+  <button
+    type="button"
+    class="btn btn-danger"
+   onclick='zugaroDecision3()'
+  >
+   Cerrar los centros medicos para no aumentar los contagios 
+  </button>
+  
+</div>
+</div>
+
+
+</div>
+
+</body>
+</html>

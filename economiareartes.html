@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+   <link
+     rel="stylesheet"
+     href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+   />
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
+   <script>
+    var identificadorDeTemporizador;
+   function reartesDecision1(){
+   clearTimeout(identificadorDeTemporizador);
+     var libertadpolitica=document.getElementById('libertad politica').innerText;
+       alert(libertadpolitica);
+      libertadpolitica=libertadpolitica-20;
+       libertadpolitica=document.getElementById('libertad politica').innerHTML=libertadpolitica;
+   }
+   function reartesDecision2(){
+   clearTimeout(identificadorDeTemporizador);
+     var libertadpolitica=document.getElementById('libertad politica').innerText;
+       alert(libertadpolitica);
+       libertadpolitica=libertadpolitica+15;
+       libertadpolitica=document.getElementById('libertad politica').innerHTML=libertadpolitica;
+   }
+   function reartesDecision3(){
+   clearTimeout(identificadorDeTemporizador);
+     var libertadpolitica=document.getElementById('libertad politica').innerText;
+       alert(libertadpolitica);
+     libertadpolitica=Math.floor(libertadpolitica);
+      libertadpolitica=libertadpolitica-20;
+       libertadpolitica=document.getElementById('libertad politica').innerHTML=libertadpolitica;
+   }
+  
+   function pedirCartaEvento() {
+       document.getElementById("comienzaJuego").innerHTML = "";
+    var x = document.getElementById("miCartaEvento");
+       x.style.display = "inline";
+     identificadorDeTemporizador = setTimeout(zugaroDecision1, 10000);
+ 
+    
+  }
+   function funcionConRetraso() {
+     alert("five seconds have elapsed.");
+   }
+  
+  
+  
+ 
+  
+   </script>
+  
+</head>
+<body>
+<div class="card-deck">
+<div class="card" style="width: 200px;">
+ <div class="card bg-warning text-white">
+   <div class="card-header">Tuvalu</div>
+ </div>
+ 
+ <div class="card-body">
+   <ul class="list-group">
+     <li class="list-group-item">Economia: <div id='Economia'>10</div></li>
+     <li class="list-group-item">Libertad Politica: <div id='Libertad Politica'>10</li>
+     <li class="list-group-item">Educacion: <div id='Educación'>10</li>
+     <li class="list-group-item">Situacion Sanitaria:<div id='Situación Sanitaria'> 10</li>
+    
+   </ul>
+ </div>
+ <div class='card-footer'>
+ </div>
+ 
+  <button type="button" class="btn btn-warning" id='comienzaJuego' onclick="pedirCartaEvento()">
+             pedir carta de evento</button>
+             <!--la carta de evento también es azarosa-->
+ 
+</div>
+<div id='miCartaEvento' style="display: none;">
+<div class="card" style="width: 200px;">
+ <div class="card bg-danger text-white">
+   <div class="card-header">Tienen pocas exportaciones de pesca que es una de sus fuentes principales de ingresos.
+</div>
+ </div>
+ 
+ </div>
+ <button
+   type="button"
+   class="btn btn-success"
+  onclick='reartesDecision1()'
+ >
+  Exportar cultivos aunque no sean adecuadas las islas donde se producen.
+ </button>
+ <br>
+ <button
+   type="button"
+   class="btn btn-primary"
+  onclick='reartesDecision2()'
+ >
+ Ofrecer más recursos de exportación.
+</button>
+<br>
+ <button
+   type="button"
+   class="btn btn-danger"
+  onclick='reartesDecision3()'
+ >
+ Buscar sitios de cultivos adecuados para su exportación.
+ </button>
+ </div>
+</div>
+ 
+ 
+</div>
+ 
+</body>
+</html>

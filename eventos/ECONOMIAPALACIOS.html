@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+    function palaciosDecision1(){
+    	var economia=document.getElementById('sudanEconomia').innerText;
+        alert(economia);
+        economia=economia-20;
+        economia=document.getElementById('sudanEconomia').innerHTML=economia;
+    }
+    function palaciosDecision2(){
+    	var economia=document.getElementById('sudanEconomia').innerText;
+        alert(economia);
+        economia=economia-50;
+        economia=document.getElementById('sudanEconomia').innerHTML=economia;
+    }
+    function palaciosDecision3(){
+    	var economia=document.getElementById('sudanEconomia').innerText;
+        alert(economia);
+        economia=Math.floor(economia);
+        economia=economia+20;
+        economia=document.getElementById('sudanEconomia').innerHTML=economia;
+    }
+    
+
+    function pedirCartaEvento() {
+      	document.getElementById("comienzaJuego").innerHTML = "";
+		var x = document.getElementById("miCartaEvento");
+      	x.style.display = "inline";
+     	identificadorDeTemporizador = setTimeout(funcionConRetraso, 3000);
+
+      
+	}
+    function funcionConRetraso() {
+      alert("Three seconds have elapsed.");
+    }
+    
+    
+    
+
+    
+    </script>
+    
+</head>
+<body>
+<div class="card-deck">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Sudan</div>
+  </div>
+
+  <div class="card-body">
+    <ul class="list-group">
+      <li class="list-group-item">Economía <div id='sudanEconomia'>100</div></li>
+      <li class="list-group-item">Educación: 80</li>
+      <li class="list-group-item">Situación Sanitaria: 50</li>
+      <li class="list-group-item">Libertades Políticas: 50</li>
+      
+    </ul>
+  </div>
+  <div class='card-footer'>
+ 
+  
+</div>
+
+   <button type="button" class="btn btn-primary" id='comienzaJuego' onclick="pedirCartaEvento()">
+              pedir carta de evento</button
+            ><!--la carta de evento también es azarosa-->
+
+</div>
+<div id='miCartaEvento' style="display: none;">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Clases Presenciales Suspendidas</div>
+  </div>
+
+  <div class="card-body">
+   las clases se suspenden en todo el territorio. 
+      
+    </ul>
+  </div>
+  <button
+    type="button"
+    class="btn btn-success"
+   onclick='palaciosDecision1()'
+  >
+   Se reparten notebooks a todos los estudiantes y se refuerza la conectividad en todo el país
+  </button>
+  <br>
+  <button
+    type="button"
+    class="btn btn-primary"
+   onclick='palaciosDecision2()'
+  >
+  
+se suspenden las clases por 3 meses  </button>
+<br>
+  <button
+    type="button"
+    class="btn btn-danger"
+   onclick='palaciosDecision3()'
+  >
+   se promueven las clases virtuales. Se pone a disposición una plataforma educativa estatal y contenidos abiertos por TV y radio en horario escolar en el canal estatal. 
+  </button>
+  
+</div>
+</div>
+
+
+</div>
+
+
+
+
+</body>
+</html>
+

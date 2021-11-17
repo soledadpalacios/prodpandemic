@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+    var identificadorDeTemporizador;
+    function ColdorfDecision1(){
+    clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('economia').innerText;
+        alert(economia);
+        economia=economia-15;
+        situacion sanitaria=situacion sanitaria+10;
+        economia=document.getElementById('economia').innerHTML=economia;
+        situacion sanitaria=document.getElementById('economia').innerHTML=situacion sanitaria;
+
+    }
+    function ColdorfDecision2(){
+    clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('economia').innerText;
+        alert(economia);
+        economia=economia-50;
+        educacion=document.getElementById('economia').innerHTML=economia;
+    }
+    function ColdorfDecision3(){
+    	clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('economia').innerText;
+        alert(economia);
+        economia=Math.floor(economia);
+        economia=economia+10;
+        situacion sanitaria=situacion sanitaria-10
+        economia=document.getElementById('economia').innerHTML=economia;
+        situacion sanitaria=document.getElementById('economia').innerHTML=situacion sanitaria;
+    }
+    
+    function pedirCartaEvento() {
+      	document.getElementById("comienzaJuego").innerHTML = "";
+		var x = document.getElementById("miCartaEvento");
+      	x.style.display = "inline";
+     	identificadorDeTemporizador = setTimeout(ColdorfDecision2, 3000);
+
+      
+	}
+    function funcionConRetraso() {
+      alert("Three seconds have elapsed.");
+    }
+    
+    
+    
+
+    
+    </script>
+    
+</head>
+<body>
+<div class="card-deck">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Mexico</div>
+  </div>
+
+  <div class="card-body">
+    <ul class="list-group">
+      <li class="list-group-item">economía <div id='economia'>80</div></li>
+      <li class="list-group-item">educacionn: </li> <div id='educacion'>63</div></li>
+      <li class="list-group-item">situación sanitaria: </li> <div id='situacion sanitaria'>40</div></li>
+      <li class="list-group-item">libertade politicas: </li> <div id='libertades politicas'>35</div></li>
+      
+    </ul>
+  </div>
+  <div class='card-footer'>
+
+  
+</div>
+
+   <button type="button" class="btn btn-primary" id='comienzaJuego' onclick="pedirCartaEvento()">
+              pedir carta de evento</button
+            ><!--la carta de evento también es azarosa-->
+
+</div>
+<div id='miCartaEvento' style="display: none;">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Educación</div>
+  </div>
+
+  <div class="card-body">
+   Debido a la cuarentena tendremos que ver como seguiran los trabajadores con sus respectivos trabajos
+      
+    </ul>
+  </div>
+  <button
+    type="button"
+    class="btn btn-success"
+   onclick='ColdorfDecision1()'
+  >
+   se les repartiran notebooks en caso de no tener y trabajaran via home-office 
+  </button>
+  <br>
+  <button
+    type="button"
+    class="btn btn-primary"
+   onclick='ColdorfDecision2()'
+  >
+   los trabajadores tendran asistencia economica del estado hasta que puedan volver a trabajar  </button>
+<br>
+  <button
+    type="button"
+    class="btn btn-danger"
+   onclick='ColdorfDecision3()'
+  >
+   iran a trabajar con los protocolos y cuidados necesarios  
+  </button>
+  
+</div>
+</div>
+
+
+</div>
+
+
+
+
+</body>
+</html>

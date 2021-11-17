@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+    var identificadorDeTemporizador;
+    function ColdorfDecision1(){
+    clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('educacion').innerText;
+        alert(economia);
+        economia=economia-20;
+        situacion sanitaria=situacion sanitaria+10;
+        educacion=educacion+10;
+        economia=document.getElementById('educacion').innerHTML=economia;
+        situacion sanitaria=document.getElementById('educacion').innerHTML=situacion sanitaria;
+        educacion=document.getElementById('educacion').innerHTML=educacion;
+
+    }
+    function ColdorfDecision2(){
+    clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('educacion').innerText;
+        alert(economia);
+        educacion=educacion-50;
+        educacion=document.getElementById('educacion').innerHTML=educacion;
+    }
+    function ColdorfDecision3(){
+    	clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('educacion').innerText;
+        alert(economia);
+        economia=Math.floor(economia);
+        educacion=educacion+20;
+        educacion=document.getElementById('educacion').innerHTML=educacion;
+    }
+    
+    function pedirCartaEvento() {
+      	document.getElementById("comienzaJuego").innerHTML = "";
+		var x = document.getElementById("miCartaEvento");
+      	x.style.display = "inline";
+     	identificadorDeTemporizador = setTimeout(ColdorfDecision2, 3000);
+
+      
+	}
+    function funcionConRetraso() {
+      alert("Three seconds have elapsed.");
+    }
+    
+    
+    
+
+    
+    </script>
+    
+</head>
+<body>
+<div class="card-deck">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Sudan</div>
+  </div>
+
+  <div class="card-body">
+    <ul class="list-group">
+      <li class="list-group-item">economia <div id='economia'>80</div></li>
+      <li class="list-group-item">educacion: </li> <div id='educacion'>63</div></li>
+      <li class="list-group-item">situación sanitaria: </li> <div id='situacion sanitaria'>40</div></li>
+      <li class="list-group-item">libertades politicas: </li> <div id='libertades politicas'>35</div></li>
+      
+    </ul>
+  </div>
+  <div class='card-footer'>
+
+  
+</div>
+
+   <button type="button" class="btn btn-primary" id='comienzaJuego' onclick="pedirCartaEvento()">
+              pedir carta de evento</button
+            ><!--la carta de evento también es azarosa-->
+
+</div>
+<div id='miCartaEvento' style="display: none;">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Educación</div>
+  </div>
+
+  <div class="card-body">
+   Por una ola de virus en el pais se deberan suspender las clases presenciales 
+      
+    </ul>
+  </div>
+  <button
+    type="button"
+    class="btn btn-success"
+   onclick='ColdorfDecision1()'
+  >
+   Se reparten notebooks a todos los estudiantes y se refuerza la conectividad en todo el país
+  </button>
+  <br>
+  <button
+    type="button"
+    class="btn btn-primary"
+   onclick='ColdorfDecision2()'
+  >
+  
+se suspenden las clases por 3 meses sin ningun tipo de educacion  </button>
+<br>
+  <button
+    type="button"
+    class="btn btn-danger"
+   onclick='ColdorfDecision3()'
+  >
+   se promueven las clases virtuales. Se pone a disposición una plataforma educativa estatal y contenidos abiertos por TV y radio en horario escolar en el canal estatal. 
+  </button>
+  
+</div>
+</div>
+
+
+</div>
+
+
+
+
+</body>
+</html>

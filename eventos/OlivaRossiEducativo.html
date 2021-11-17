@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+    var identificadorDeTemporizador;
+    function olivarossiDecision1(){
+        clearTimeout (identificadorDeTemporizador);
+    	var economia=document.getElementById('economia').innerText;
+      var educacion=document.getElementById('educacion').innerText;
+      var situacionsanitaria=document.getElementById('situacionsanitaria').innerText; 
+        economia=economia-5;
+        educacion=Math.floor(educacion);
+        educacion=educacion+15;
+        situacionsanitaria=situacionsanitaria-10;
+        economia=document.getElementById('economia').innerHTML=economia;
+        educacion=document.getElementById('educacion').innerHTML=educacion;
+        situacionsanitaria=document.getElementById('situacionsanitaria').innerHTML=situacionsanitaria;
+    }
+    function olivarossiDecision2(){
+        clearTimeout (identificadorDeTemporizador);
+    	var educacion=document.getElementById('educacion').innerText;
+      var situacionsanitaria=document.getElementById('situacionsanitaria').innerText; 
+        educacion=Math.floor(educacion);    
+        educacion=educacion-20; 
+        situacionsanitaria=Math.floor(situacionsanitaria);
+        situacionsanitaria=situacionsanitaria+15;
+        educacion=document.getElementById('educacion').innerHTML=educacion;
+        situacionsanitaria=document.getElementById('situacionsanitaria').innerHTML=situacionsanitaria;
+    }
+    function olivarossiDecision3(){
+    	clearTimeout (identificadorDeTemporizador);
+    	var educacion=document.getElementById('educacion').innerText;
+      var situacionsanitaria=document.getElementById('situacionsanitaria').innerText;
+        educacion=Math.floor(educacion);
+        educacion=educacion+5;
+        situacionsanitaria=Math.floor(situacionsanitaria);
+        situacionsanitaria=situacionsanitaria+15;
+        educacion=document.getElementById('educacion').innerHTML=educacion;
+        situacionsanitaria=document.getElementById('situacionsanitaria').innerHTML=situacionsanitaria;
+    }
+    
+    function pedirCartaEvento() {
+      	document.getElementById("comienzaJuego").innerHTML = "";
+		var x = document.getElementById("miCartaEvento");
+      	x.style.display = "inline";
+     	identificadorDeTemporizador = setTimeout(olivarossiDecision2,9000);
+
+      
+	}
+    function funcionConRetraso() {
+      alert("Nine seconds have elapsed.");
+    }
+    
+    
+    
+
+    
+    </script>
+    
+</head>
+<body>
+<div class="card-deck">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Bahrein</div>
+  </div>
+
+  <div class="card-body">
+    <ul class="list-group">
+      <li class="list-group-item">Economia: <div id='economia'>55</div></li>
+      <li class="list-group-item">Educacion: <div id='educacion'>78</div></li>
+      <li class="list-group-item">Situacion Sanitaria: <div id='situacionsanitaria'>67</div></li>
+      <li class="list-group-item">Libertad Politica: <div id='libertad'>69</div></li>
+      
+    </ul>
+  </div>
+  <div class='card-footer'>
+ 
+  
+</div>
+
+   <button type="button" class="btn btn-primary" id='comienzaJuego' onclick="pedirCartaEvento()">
+              pedir carta de evento</button
+            ><!--la carta de evento también es azarosa-->
+
+</div>
+<div id='miCartaEvento' style="display: none;">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Educacion</div>
+  </div>
+
+  <div class="card-body">
+   Se restructuran las aulas y las salas de docentes y administradores para que se respete las distancia social.
+   Se incorpora el menor nuemro, docentes y personal del sector educatico. 
+   Se implementan metodos de proteccion (mascarillas, gel desinfectante, jabones de mano) e instrumental de medicion de la temperatura corporal.  
+      
+    </ul>
+  </div>
+  <button
+    type="button"
+    class="btn btn-success"
+   onclick='olivarossiDecision1()'
+  >
+   Abrir las escuelas con protocolo 
+  </button>
+  <br>
+  <button
+    type="button"
+    class="btn btn-primary"
+   onclick='olivarossiDecision2()'
+  >
+  
+   Cerrar las escuelas 
+  </button>
+<br>
+  <button
+    type="button"
+    class="btn btn-danger"
+   onclick='olivarossiDecision3()'
+  >
+   Modalidad virtual 
+  </button>
+  
+</div>
+</div>
+
+
+</div>
+
+
+
+
+</body>
+</html>

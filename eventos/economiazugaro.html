@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    <script>
+     var identificadorDeTemporizador;
+    function zugaroDecision1(){
+    clearTimeout(identificadorDeTemporizador);
+    
+    var economia=document.getElementById('economia').innerText;
+        alert(economia);-5
+        economia=economia; 
+       economia=document.getElementById('economia').innerHTML=economia;
+    }
+    function zugaroDecision2(){
+    clearTimeout(identificadorDeTemporizador);
+    var economia=document.getElementById('economia').innerText;
+        alert(economia);
+        economia=economia-5;
+       economia=document.getElementById('economia').innerHTML=economia;
+    }
+    function zugaroDecision3(){
+    clearTimeout(identificadorDeTemporizador);
+    	var economia=document.getElementById('economia').innerText;
+        alert(economia);
+        economia=Math.floor(economia);
+        economia=economia+10;
+       economia=document.getElementById('economia').innerHTML=economia;
+    }
+    
+    function pedirCartaEvento() {
+      	document.getElementById("comienzaJuego").innerHTML = "";
+		var x = document.getElementById("miCartaEvento");
+      	x.style.display = "inline";
+     	identificadorDeTemporizador = setTimeout(zugaroDecision1, 10000);
+
+      
+	}
+    function funcionConRetraso() {
+      alert("five seconds have elapsed.");
+    }
+    
+    </script>
+    
+ 
+</head>
+<body>
+<div class="card-deck">
+<div class="card" style="width: 200px;">
+  <div class="card bg-warning text-white">
+    <div class="card-header">Jorania</div>
+  </div>
+
+  <div class="card-body">
+    <ul class="list-group">
+<li class="list-group-item">economia<div id='economia'>40</div></li>
+<li class="list-group-item">educacion:<div id='educacion'>50</div> </li> 
+<li class="list-group-item">situacion sanitaria:<div id='situacion sanitaria'>50</div></li> 
+<li class="list-group-item">libertades politicas:<div id='libertades politicas'>30</div></li> 
+      
+    </ul>
+  </div>
+  <div class='card-footer'>
+ 
+  
+</div>
+
+   <button type="button" class="btn btn-warning" id='comienzaJuego' onclick="pedirCartaEvento()">
+              pedir carta de evento</button>
+              <!--la carta de evento también es azarosa-->
+
+</div>
+<div id='miCartaEvento' style="display: none;">
+<div class="card" style="width: 200px;">
+  <div class="card bg-danger text-white">
+    <div class="card-header">Aumenta el indice de pobreza</div>
+  </div>
+
+  </div>
+  <button
+    type="button"
+    class="btn btn-success"
+   onclick='zugaroDecision1()'
+  >
+   Dejar sin ayuda a personas de bajos recursos
+  </button>
+  <br>
+  <button
+    type="button"
+    class="btn btn-primary"
+   onclick='zugaroDecision2()'
+  >
+  
+Dar planes sociales </button>
+<br>
+  <button
+    type="button"
+    class="btn btn-danger"
+   onclick='zugaroDecision3()'
+  >
+   Buscar ayuda externa para aumentar la exportacion
+  </button>
+  
+</div>
+</div>
+
+
+</div>
+
+
+
+
+</body>
+</html>
